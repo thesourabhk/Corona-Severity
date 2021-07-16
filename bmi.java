@@ -21,7 +21,7 @@ public class bmi {
 		try {
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Input weight in kilogram: ");
+		System.out.println("Input weight in kilogram: ");  //Exception Handling
 		float weight = sc.nextFloat();
 		System.out.println("\nInput height in meters: ");
 		float height = sc.nextFloat();

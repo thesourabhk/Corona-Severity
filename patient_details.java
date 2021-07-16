@@ -8,14 +8,15 @@ public class patient_details extends bmi {
 	String name;
 	String gender;
 	
-//	patient_details()
-//	{
-//		age=0;
-//		gender=null;
-//		name=null;
-		
-//	}
-	void Inti(int age,String name,String gender,float points)
+	patient_details()
+	{
+	
+		age=0;
+		gender=null;
+		name=null;
+		points=0;
+	}
+	patient_details(int age,String name,String gender,float points)
 	{
 		this.age=age;            //use of "this" keyword.
 		this.name=name;
@@ -25,11 +26,11 @@ public class patient_details extends bmi {
 	public void Details_input () {
 		Scanner sc = new Scanner(System.in);
 	    System.out.println("Input name: ");
-	    String  name = sc.next();
+	     name = sc.next();
 	    System.out.println("\nInput gender: ");
-	    String gender = sc.next();
+	     gender = sc.next();
 	    System.out.println("\nInput age: ");
-	    int age = sc.nextInt();
+	     age = sc.nextInt();
 	   
 		}
 	void display() {
@@ -40,27 +41,31 @@ public class patient_details extends bmi {
 	   }
 	
 	
-	  public float details_points(){
+	  public float details_points(int age,String gender){
 		
-		  if(age>65)
-	    {
-		  points=(float)1.5;
-		  System.out.println(points);
-	    }
-		  else if(gender=="male" || gender=="MALE" || gender=="Male")
+		  if(age>65 && gender.equals("male"))
+		  {
+		    points=(float)4.5;
+		  //System.out.println(points);
+		  }
+		  else if(age>65)
+		  {
+			  points=(float) 1.5;
+			 // System.out.println(points);
+		  }
+		  else if(gender.equals("male"))
 		  {
 			  points=3;
-			  System.out.println(points);
+			  //System.out.println(points);
 		  }
 		  else
 		  {
 			  points=0;
-			  System.out.println(points);
 		  }
-		  
-		  return points;
+		  return (float)points;
 	}
-	  
+	
+	
 	
 	
 }
